@@ -24,6 +24,13 @@ Now for the training data:
 {insert init data graph}
 {insert lowest cars numbers}
 
+#### Testing for initial data
+each car model was testing against 10 never seen images and these are the scores for all of them
+{insert all car test}
+
+as you can see, there are a bunch that didn't perform well, let's expand on those.
+{insert lowest test scores}
+
 
 ### Notes:
 - famous proven solution using vgg16 https://medium.com/@albionkrasniqi22_80133/vehicle-classification-742403117f43
