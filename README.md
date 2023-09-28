@@ -7,7 +7,7 @@ The model architecture is extremely straightforward and simple, for the low low 
 
 {insert model arch image}
 
-The architecture is cited in this paper https://doi.org/10.48550/arXiv.2304.00501 **AKA YOLOV8-CLS**
+The architecture is cited in this paper https://doi.org/10.48550/arXiv.2304.00501 **AKA YOLOV8-CLS**, normally it's pretrained on 1000 classes from the ImageNet dataset
 
 # Data
 Data was broken into train, val and test.
