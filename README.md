@@ -32,5 +32,8 @@ as you can see, there are a bunch that didn't perform well, let's expand on thos
 {insert lowest test scores}
 
 
+What does it look like when the model fails?
+{insert bad example photo here}
+
 ### Notes:
 - famous proven solution using vgg16 https://medium.com/@albionkrasniqi22_80133/vehicle-classification-742403117f43
