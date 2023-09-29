@@ -1,5 +1,5 @@
 # FCC
-Fine Car Classifier is a classification project that is trained on 70+ models of cars and would identify each ones make and model
+Fine Car Classifier is a classification project that's trained on 70+ models of cars and would identify each one's make and model
 
 # Usage
 ```python
@@ -49,6 +49,7 @@ as you can see, there are a bunch that didn't perform well, let's expand on thos
 
 
 What does it look like when the model fails?
+
 ![bad example](https://github.com/karimkohel/FCC/blob/main/docs/badexample.jpg?raw=true)
 
 ### Notes:
