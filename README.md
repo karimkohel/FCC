@@ -2,6 +2,9 @@
 Fine Car Classifier is a classification project that's trained on 70+ models of cars and would identify each one's make and model
 
 # Usage
+
+Download the [model weights file.pt](https://github.com/karimkohel/FCC/releases/tag/v1.0.0-alpha) and use it with this package as follows 
+
 ```python
 from FCC.CarClassifier import CarClassifier
 
