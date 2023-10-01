@@ -51,7 +51,9 @@ as you can see, there are a bunch that didn't perform well, let's expand on thos
 ![lowest test scores](https://github.com/karimkohel/FCC/blob/main/docs/worstTestingScores.png?raw=true)
 
 
-What does it look like when the model fails?
+What does it look like when the model fails? 
+
+> Expand more on failing cases while showing more data
 
 ![bad example](https://github.com/karimkohel/FCC/blob/main/docs/badexample.jpg?raw=true)
 
