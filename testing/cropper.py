@@ -7,7 +7,12 @@ def crop_cars(mode, frame: np.ndarray) -> None:
     for result in results:
         for predictedClass in result.boxes.cls:
             if int(predictedClass) in [2, 7]:
-                boxes = result.boxes.cpu().numpy()
+                boxes = result.boxes.xyxy.to('cpu').numpy().astype(int)
+                confidences = result.boxes.conf.to('cpu').numpy().astype(float)
+
+                for box, conf in zip(boxes, confidences):
+                    x_min, y_min, x_max, y_max = box
+                    cropped = frame[y_min:y_max, x_min:x_max]
 
 
 if __name__ == "__main__":
