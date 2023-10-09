@@ -10,10 +10,12 @@ model.to('cuda')
 
 fcc = CarClassifier("testing/best.pt")
 
-cap = cv2.VideoCapture('testing/day_arkan1.test.avi')
+cap = cv2.VideoCapture('testing/MoA_cars.test.mp4')
+output = cv2.VideoWriter("testing/output.mp4",cv2.VideoWriter_fourcc(*'MJPG'),30,(1080,1920))
 
 while 1:
     ret, frame = cap.read()
+    frame = cv2.resize(frame, (1920, 1080))
     carBoxes = crop_cars(model, frame)
     for detections in carBoxes:
         for box in detections:
@@ -26,6 +28,9 @@ while 1:
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
+    else:
+        output.write(frame)
 
+output.release()
 cv2.destroyAllWindows()
 cap.release()
