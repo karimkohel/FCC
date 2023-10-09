@@ -4,6 +4,7 @@ from ultralytics import YOLO
 from ultralytics.engine.results import Results
 import numpy as np
 from typing import Union
+import random
 
 class CarClassifier():
     """CarClassifier is a wrapper class for the custom trained classification model to facilitate easier usage and code integration"""
@@ -23,16 +24,21 @@ class CarClassifier():
         self.model = YOLO(model)
         self.NAMES = self.model.names
 
-    def predict(self, img: Union[str, np.ndarray]) -> str:
+    def predict(self, img: Union[str, np.ndarray], conf: float = 0.1) -> str:
         """Use the class classifier model to make a prediction on one image and return the predicted car model name
         
         INPUT
         ---
         img: required, the string path to the image or image object
 
+        conf: optional, 0->1 float determining the confidence required to give a prediction. Defaults to 0.1
+
         OUTPUT
         ---
         string containing the predicted class name
         """
         results = self.model.predict(source=img)
-        return self.NAMES[results[0].probs.top1]
+        if results[0].probs.top1conf.to('cpu').numpy().astype(float) > conf:
+            return self.NAMES[results[0].probs.top1]
+        else:
+            return "unknown car"
